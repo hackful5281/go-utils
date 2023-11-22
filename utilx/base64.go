@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/cast"
 )
 
-// base64编码
+// Base64Encode base64编码
 func Base64Encode(v interface{}) string {
 	var val []byte
 	switch d := v.(type) {
@@ -22,13 +22,13 @@ func Base64Encode(v interface{}) string {
 	return base64.StdEncoding.EncodeToString(val)
 }
 
-// 解码
+// Base64Decode 解码
 func Base64Decode(src string) string {
 	b, _ := base64.StdEncoding.DecodeString(src)
 	return string(b)
 }
 
-// 主要对 OTS的NextNextStartPrimaryKey 进行base64编码
+// Base64KeyEncode 主要对 OTS的NextNextStartPrimaryKey 进行base64编码
 func Base64KeyEncode(v interface{}) string {
 	var val []byte
 	switch d := v.(type) {
@@ -43,7 +43,7 @@ func Base64KeyEncode(v interface{}) string {
 	return base64.StdEncoding.EncodeToString(val)
 }
 
-// 解码成*tablestore.PrimaryKey
+// Base64KeyDecode 解码成*tablestore.PrimaryKey
 func Base64KeyDecode(src string) *tablestore.PrimaryKey {
 	b, _ := base64.StdEncoding.DecodeString(src)
 	data := &tablestore.PrimaryKey{}

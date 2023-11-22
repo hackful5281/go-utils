@@ -23,7 +23,7 @@ func init() {
 	_runenv = os.Getenv("RUN_ENV")
 }
 
-// 获取本地IP
+// GetLocalIp 获取本地IP
 func GetLocalIp() string {
 	addrs, err := net.InterfaceAddrs()
 
@@ -45,17 +45,17 @@ func GetLocalIp() string {
 	return ""
 }
 
-// 获取当前服务的项目名
+// GetProjectName 获取当前服务的项目名
 func GetProjectName() string {
 	return _project
 }
 
-// 获取当前服务运行的环境
+// GetRunEnv 获取当前服务运行的环境
 func GetRunEnv() string {
 	return _runenv
 }
 
-// 获取当前的服务所在的命名空间
+// GetNamespace 获取当前的服务所在的命名空间
 func GetNamespace() string {
 	return _namespace
 }

@@ -8,7 +8,7 @@ import (
 	"fmt"
 )
 
-// aes对称加密
+// AesEny aes对称加密
 func AesEny(key, iv string, content interface{}) (string, error) {
 	key = paddingAes(key)
 	iv = paddingAes(iv)
@@ -25,7 +25,7 @@ func AesEny(key, iv string, content interface{}) (string, error) {
 	return base64.StdEncoding.EncodeToString(plaintext), nil
 }
 
-// 解密
+// AesDec 解密
 func AesDec(key, iv, content string, v interface{}) error {
 	key = paddingAes(key)
 	iv = paddingAes(iv)
@@ -42,7 +42,7 @@ func AesDec(key, iv, content string, v interface{}) error {
 	return json.Unmarshal(ciptext, v)
 }
 
-// key iv 必须 16位
+// paddingAes key iv 必须 16位
 // 不足在前面补充0
 // 超过裁剪
 func paddingAes(s string) string {

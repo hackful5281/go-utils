@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// md5加密
+// Md5Encode md5加密
 // salt 盐值
 func Md5Encode(val string, salt ...string) string {
 	if val == "" {
